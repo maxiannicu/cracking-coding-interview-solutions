@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// Runtime : O(n) , n - number of characters of input string
+// Memory : O(1)
 func hasUniqueCharacters(input string) bool {
 	usageMatrix := make([]int, 1 << 8)
 
