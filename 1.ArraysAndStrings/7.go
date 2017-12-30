@@ -5,7 +5,7 @@ import "fmt"
 // Runtime : O(n^2)
 // Memory : O(n^2)
 // creates new matrix with same size and copies data to the computed position
-func invert(matrix [][]int) [][]int {
+func rotate(matrix [][]int) [][]int {
 	n := len(matrix)
 	result := make([][]int, n)
 	for i:=0; i < n; i++ {
@@ -24,7 +24,7 @@ func invert(matrix [][]int) [][]int {
 // Runtime : O(n^2)
 // Memory : O(1)
 // use 4 pivots (in each corner) and replace once a time. otherwise you will lose a value. this methods swaps values from edges to center
-func invertInPlace(matrix [][]int) [][]int {
+func rotateInPlace(matrix [][]int) [][]int {
 	n := len(matrix)
 	
 	for i:=0; i < n/2; i++ {
@@ -56,7 +56,7 @@ func main(){
 	fmt.Println("Before")
 	printMatrix(matrix)
 	fmt.Println("After")
-	printMatrix(invert(matrix))
-	fmt.Println("After invert in place")
-	printMatrix(invertInPlace(matrix))
+	printMatrix(rotate(matrix))
+	fmt.Println("After rotate in place")
+	printMatrix(rotateInPlace(matrix))
 }
