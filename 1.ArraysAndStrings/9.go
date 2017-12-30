@@ -5,7 +5,15 @@ import "strings"
 
 // Runtime : O(a+b)
 // Memory : O(a+b)
-// finds columns and rows which contains 0 and then clears them
+// Example :
+// a = abcd
+// b = bcda
+// 1 - concatenate a => abcdabcd
+// 2 - check if result contains b
+// 3 - if no, return false. otherwise go to 5
+// 4 - remove b from concatination => abcd
+// 5 - if string after removal is equal to a , then it is rotation. otherwise no ! ...
+//  	we can have a situation (a = abcd, b=bcd) which passes all steps but it's not a rotation. so this step assumes correct solution
 func isStringRotation(a,b string) bool {
 	concat := fmt.Sprintf("%s%s",a,a)
 	if strings.Contains(concat,b) {
