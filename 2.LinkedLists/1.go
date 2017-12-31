@@ -2,8 +2,11 @@ package main
 
 import "fmt"
 
+
+// Runtime : O(n)
+// Memory : O(n)
 func removeDuplicates(head *SingleLinkedListNode){
-	alreadyFoundElements := map[string]bool{}
+	alreadyFoundElements := map[int]bool{}
 	
 	var last *SingleLinkedListNode
 	for ; head != nil; head = head.next {
@@ -18,6 +21,8 @@ func removeDuplicates(head *SingleLinkedListNode){
 }
 
 
+// Runtime : O(n^2)
+// Memory : O(1)
 func removeDuplicatesWithoutBuffer(head *SingleLinkedListNode){
 	current := head
 	
