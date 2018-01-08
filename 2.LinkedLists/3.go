@@ -1,6 +1,5 @@
 package main
 
-
 // Runtime : O(n)
 // Memory : O(1)
 func deleteMiddle(head *SingleLinkedListNode, node *SingleLinkedListNode) {

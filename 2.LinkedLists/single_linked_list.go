@@ -7,9 +7,13 @@ type SingleLinkedListNode struct {
 	next *SingleLinkedListNode
 }
 
+func (node *SingleLinkedListNode) String() string {
+	return fmt.Sprintf("Node(value : %v, next : %v)", node.value, node.next != nil)
+}
+
 func getNewSingleLinkedList() *SingleLinkedListNode {
 	return &SingleLinkedListNode{
-		value : 1,
+		value : 1, 
 		next : &SingleLinkedListNode{
 			value : 4,
 			next : &SingleLinkedListNode{
@@ -30,6 +34,27 @@ func getNewSingleLinkedList() *SingleLinkedListNode {
 			},
 		},	
 	}
+}
+
+func createSingleLinkedList(elements ...int) *SingleLinkedListNode {
+	var head *SingleLinkedListNode
+	var last *SingleLinkedListNode
+
+	for _, el := range elements {
+		if head == nil {
+			head = &SingleLinkedListNode {
+				value : el,
+			}
+			last = head
+		} else {
+			last.next = &SingleLinkedListNode {
+				value : el,
+			}
+			last = last.next
+		}
+	}
+
+	return head
 }
 
 func (head *SingleLinkedListNode) printList() {
