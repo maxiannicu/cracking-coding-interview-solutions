@@ -11,6 +11,15 @@ func (node *SingleLinkedListNode) String() string {
 	return fmt.Sprintf("Node(value : %v, next : %v)", node.value, node.next != nil)
 }
 
+func (node *SingleLinkedListNode) Length() int {
+	size := 0
+	for temp := node; temp != nil; temp = temp.next {
+		size++
+	}
+
+	return size
+}
+
 func getNewSingleLinkedList() *SingleLinkedListNode {
 	return &SingleLinkedListNode{
 		value : 1, 

@@ -4,6 +4,8 @@ import "fmt"
 import "github.com/golang-collections/collections/stack"
 
 
+// Runtime : O(a) || O(b) . Could not be determined as we don't have relationship between A and B
+// Memory : O(a) || O(b) . Could not be determined as we don't have relationship between A and B
 func sum(a,b *SingleLinkedListNode) *SingleLinkedListNode {
 	var lastResultDigit *SingleLinkedListNode
 	result := &SingleLinkedListNode{
@@ -43,6 +45,8 @@ func sum(a,b *SingleLinkedListNode) *SingleLinkedListNode {
 }
 
 
+// Runtime : O(a) || O(b) . Could not be determined as we don't have relationship between A and B
+// Memory : O(a) || O(b) . Could not be determined as we don't have relationship between A and B
 func sumReversed(a,b *SingleLinkedListNode) *SingleLinkedListNode {
 	stackA := stack.New()
 	stackB := stack.New()
